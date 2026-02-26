@@ -1,0 +1,19 @@
+{
+  "name": "5dai-plugins",
+  "owner": {
+    "name": "Fifth Dimension AI",
+    "email": "engineering@fifthdimensionai.com"
+  },
+  "plugins": [
+    {
+      "name": "granola",
+      "source": {
+        "source": "github",
+        "repo": "5dai-dev/claude-plugins",
+        "path": "plugins/granola"
+      },
+      "description": "Interact with Granola AI meeting notes — browse folders, read transcripts, and chat with meetings.",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "granola",
+  "description": "Interact with Granola AI meeting notes — browse folders, read transcripts, and chat with meetings using Granola's AI.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fifth Dimension AI",
+    "email": "engineering@fifthdimensionai.com"
+  },
+  "homepage": "https://github.com/5dai-dev/claude-plugins",
+  "repository": "https://github.com/5dai-dev/claude-plugins"
+}
