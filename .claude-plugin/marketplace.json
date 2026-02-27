@@ -7,21 +7,13 @@
   "plugins": [
     {
       "name": "granola",
-      "source": {
-        "source": "github",
-        "repo": "5dai-dev/claude-plugins",
-        "path": "plugins/granola"
-      },
+      "source": "./plugins/granola",
       "description": "Interact with Granola AI meeting notes — browse folders, read transcripts, and chat with meetings.",
       "version": "1.0.0"
     },
     {
       "name": "fe-nav",
-      "source": {
-        "source": "github",
-        "repo": "5dai-dev/claude-plugins",
-        "path": "plugins/fe-nav"
-      },
+      "source": "./plugins/fe-nav",
       "description": "Navigate the Fifth Dimension access-ui web application using Chrome MCP browser automation.",
       "version": "1.0.0"
     }
