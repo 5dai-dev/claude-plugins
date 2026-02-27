@@ -1,4 +1,5 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "5dai-plugins",
   "owner": {
     "name": "Fifth Dimension AI",
@@ -9,13 +10,13 @@
       "name": "granola",
       "source": "./plugins/granola",
       "description": "Interact with Granola AI meeting notes — browse folders, read transcripts, and chat with meetings.",
-      "version": "1.0.0"
+      "category": "productivity"
     },
     {
       "name": "fe-nav",
       "source": "./plugins/fe-nav",
       "description": "Navigate the Fifth Dimension access-ui web application using Chrome MCP browser automation.",
-      "version": "1.0.0"
+      "category": "development"
     }
   ]
 }
