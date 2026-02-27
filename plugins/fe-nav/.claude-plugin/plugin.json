@@ -1,0 +1,11 @@
+{
+  "name": "fe-nav",
+  "description": "Navigate the Fifth Dimension access-ui web application using Chrome MCP browser automation.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fifth Dimension AI",
+    "email": "engineering@fifthdimensionai.com"
+  },
+  "homepage": "https://github.com/5dai-dev/claude-plugins",
+  "repository": "https://github.com/5dai-dev/claude-plugins"
+}
