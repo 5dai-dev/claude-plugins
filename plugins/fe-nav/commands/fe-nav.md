@@ -1,5 +1,4 @@
 ---
-name: fe-nav
 description: >
   Navigate the Fifth Dimension access-ui web application using Chrome MCP
   browser automation. Triggers: navigating the website, clicking UI elements,
@@ -8,8 +7,8 @@ description: >
 
 # Fifth Dimension access-ui — Browser Navigation
 
-> **Prerequisites**: See [SETUP.md](./SETUP.md) for Chrome MCP setup.
-> **Regeneration**: See [REGENERATE.md](./REGENERATE.md) to update these files from source.
+> **Prerequisites**: See [SETUP.md](${CLAUDE_PLUGIN_ROOT}/SETUP.md) for Chrome MCP setup.
+> **Regeneration**: See [REGENERATE.md](${CLAUDE_PLUGIN_ROOT}/REGENERATE.md) to update these files from source.
 
 ## Domain
 
@@ -91,14 +90,14 @@ Recipes use timing labels instead of milliseconds. Adjust for your environment:
 
 | File | When to read |
 |------|-------------|
-| [`AUTH.md`](./pages/AUTH.md) | Sign in, sign out, token flows |
-| [`THREADS.md`](./pages/THREADS.md) | Thread list, creating threads, chatting, attachments, feedback |
-| [`SKILLS.md`](./pages/SKILLS.md) | Creating, editing, sharing, deleting skills |
-| [`DATA_ROOMS.md`](./pages/DATA_ROOMS.md) | Browsing files, uploading documents, searching data rooms |
-| [`DATA_CONNECTIONS.md`](./pages/DATA_CONNECTIONS.md) | SharePoint/Box OAuth, connect drives, sync folders |
-| [`DATA_SOURCES.md`](./pages/DATA_SOURCES.md) | External data source search, web research |
-| [`HOME.md`](./pages/HOME.md) | Dashboard, tool cards, prompt suggestions, search |
-| [`TOOLKIT.md`](./pages/TOOLKIT.md) | Workflow launcher, team selector, recent executions |
-| [`SIDEBAR.md`](./pages/SIDEBAR.md) | Navigation sidebar, switching pages, sign out |
+| [`AUTH.md`](${CLAUDE_PLUGIN_ROOT}/pages/AUTH.md) | Sign in, sign out, token flows |
+| [`THREADS.md`](${CLAUDE_PLUGIN_ROOT}/pages/THREADS.md) | Thread list, creating threads, chatting, attachments, feedback |
+| [`SKILLS.md`](${CLAUDE_PLUGIN_ROOT}/pages/SKILLS.md) | Creating, editing, sharing, deleting skills |
+| [`DATA_ROOMS.md`](${CLAUDE_PLUGIN_ROOT}/pages/DATA_ROOMS.md) | Browsing files, uploading documents, searching data rooms |
+| [`DATA_CONNECTIONS.md`](${CLAUDE_PLUGIN_ROOT}/pages/DATA_CONNECTIONS.md) | SharePoint/Box OAuth, connect drives, sync folders |
+| [`DATA_SOURCES.md`](${CLAUDE_PLUGIN_ROOT}/pages/DATA_SOURCES.md) | External data source search, web research |
+| [`HOME.md`](${CLAUDE_PLUGIN_ROOT}/pages/HOME.md) | Dashboard, tool cards, prompt suggestions, search |
+| [`TOOLKIT.md`](${CLAUDE_PLUGIN_ROOT}/pages/TOOLKIT.md) | Workflow launcher, team selector, recent executions |
+| [`SIDEBAR.md`](${CLAUDE_PLUGIN_ROOT}/pages/SIDEBAR.md) | Navigation sidebar, switching pages, sign out |
 
 <!-- AUTO:AREA_TABLE_END -->

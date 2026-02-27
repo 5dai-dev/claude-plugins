@@ -998,22 +998,22 @@ def _generate_site_map() -> str:
 
 
 def _generate_area_table() -> str:
-    """Generate the area files table for SKILL.md."""
+    """Generate the area files table for commands/fe-nav.md."""
     lines: list[str] = []
     lines.append("| File | When to read |")
     lines.append("|------|-------------|")
     for area in AREAS:
         lines.append(
-            f"| [`{area.key}.md`](./pages/{area.key}.md) | {area.when_to_read} |"
+            f"| [`{area.key}.md`](${{CLAUDE_PLUGIN_ROOT}}/pages/{area.key}.md) | {area.when_to_read} |"
         )
     return "\n".join(lines)
 
 
-def update_skill_md(skill_md_path: Path) -> None:
-    """Update auto-generated sections in SKILL.md."""
-    text = read_text(skill_md_path)
+def update_command_md(command_md_path: Path) -> None:
+    """Update auto-generated sections in commands/fe-nav.md."""
+    text = read_text(command_md_path)
     if not text:
-        print(f"  WARNING: SKILL.md not found at {skill_md_path}")
+        print(f"  WARNING: commands/fe-nav.md not found at {command_md_path}")
         return
 
     # Update site map
@@ -1028,8 +1028,8 @@ def update_skill_md(skill_md_path: Path) -> None:
         after = text[text.index(AREA_TABLE_END) :]
         text = before + "\n\n" + _generate_area_table() + "\n\n" + after
 
-    skill_md_path.write_text(text, encoding="utf-8")
-    print(f"  updated {skill_md_path.name}")
+    command_md_path.write_text(text, encoding="utf-8")
+    print(f"  updated {command_md_path.name}")
 
 
 # ---------------------------------------------------------------------------
@@ -1056,10 +1056,10 @@ def main() -> None:
         print(f"ERROR: Source directory not found: {src}")
         raise SystemExit(1)
 
-    # Default output: pages/ directory next to scripts/
+    # Default output: pages/ directory at plugin root (parent of scripts/)
     script_dir = Path(__file__).resolve().parent
-    skill_dir = script_dir.parent  # skills/fe-nav/
-    out_dir = Path(args.out).resolve() if args.out else skill_dir / "pages"
+    plugin_dir = script_dir.parent  # plugins/fe-nav/
+    out_dir = Path(args.out).resolve() if args.out else plugin_dir / "pages"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Source: {src}")
@@ -1077,12 +1077,12 @@ def main() -> None:
         path.write_text(content, encoding="utf-8")
         print(f"  wrote {path.name}")
 
-    # Update SKILL.md
-    skill_md = skill_dir / "SKILL.md"
-    if skill_md.exists():
-        update_skill_md(skill_md)
+    # Update commands/fe-nav.md
+    command_md = plugin_dir / "commands" / "fe-nav.md"
+    if command_md.exists():
+        update_command_md(command_md)
     else:
-        print(f"  SKILL.md not found at {skill_md}, skipping update")
+        print(f"  commands/fe-nav.md not found at {command_md}, skipping update")
 
     print(f"\nDone. {len(AREAS)} area files written to {out_dir}/")
 

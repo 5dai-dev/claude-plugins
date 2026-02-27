@@ -1,27 +1,29 @@
 # Regenerating Navigation Files
 
-The `pages/*.md` files and the site map in `SKILL.md` are generated from the access-ui source code.
+The `pages/*.md` files and the site map in `commands/fe-nav.md` are generated from the access-ui source code.
 
 ## Script location
 
 ```
-skills/fe-nav/scripts/generate.py
+scripts/generate.py
 ```
 
 ## Usage
+
+From the plugin root (`plugins/fe-nav/`):
 
 ```bash
 python scripts/generate.py --src <path-to-access-ui/src>
 ```
 
-Example from the skill directory:
+Example:
 
 ```bash
-cd skills/fe-nav
+cd plugins/fe-nav
 python scripts/generate.py --src ~/workspace/m5/application/access-ui/src
 ```
 
-By default, output goes to `pages/` and `SKILL.md` is updated in place (next to the script's parent). Override with `--out`:
+By default, output goes to `pages/` and `commands/fe-nav.md` is updated in place. Override with `--out`:
 
 ```bash
 python scripts/generate.py --src ~/workspace/m5/application/access-ui/src --out ./pages
@@ -32,7 +34,7 @@ python scripts/generate.py --src ~/workspace/m5/application/access-ui/src --out 
 1. Scans route files and component directories under `src/`
 2. Extracts UI elements: button labels, input placeholders, dialog titles, dropdown items, tab labels, aria labels
 3. Generates one `pages/<AREA>.md` file per area
-4. Updates the site map and area file table in `SKILL.md` (between `<!-- AUTO:` markers)
+4. Updates the site map and area file table in `commands/fe-nav.md` (between `<!-- AUTO:` markers)
 
 ## How to add a new area
 
@@ -66,4 +68,4 @@ AreaConfig(
 | Simple recipes (navigate-to, search) | **Auto** — generated from route and placeholder data |
 | Layout notes | **Manual** — written in `AreaConfig.layout_notes` |
 | Complex recipes (multi-step workflows) | **Manual** — written in `AreaConfig.recipes` |
-| Site map tables in SKILL.md | **Auto** — generated from all area configs |
+| Site map tables in commands/fe-nav.md | **Auto** — generated from all area configs |

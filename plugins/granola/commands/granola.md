@@ -1,5 +1,4 @@
 ---
-name: granola
 description: >
   This skill should be used when the user wants to interact with Granola AI meeting notes.
   Triggers: accessing meeting transcripts, searching meeting notes, listing Granola folders,
@@ -19,60 +18,52 @@ If auth fails, tell the user to open the Granola app and sign in.
 
 ## Available Commands
 
-The helper script is at `scripts/granola.py` relative to this skill's directory.
-
-To find the script path, locate this SKILL.md file and resolve `scripts/granola.py` next to it. For example:
-```
-SKILL_DIR="$(dirname "$(find ~/.claude -path '*/skills/granola/SKILL.md' -print -quit 2>/dev/null)")"
-GRANOLA="$SKILL_DIR/scripts/granola.py"
-```
-
-In all examples below, `GRANOLA` refers to the resolved script path.
+The helper script is at `${CLAUDE_PLUGIN_ROOT}/scripts/granola.py`.
 
 ### Test Authentication
 ```bash
-python3 $GRANOLA auth
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" auth
 ```
 Shows current user email, workspaces, and confirms auth is working.
 
 ### List Workspaces
 ```bash
-python3 $GRANOLA workspaces
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" workspaces
 ```
 
 ### List All Folders
 ```bash
-python3 $GRANOLA folders
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" folders
 ```
 Returns JSON array of folders with `id`, `name`, `document_count`, `is_favourite`.
 
 ### List Documents in a Folder
 ```bash
-python3 $GRANOLA docs <folder_id>
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" docs <folder_id>
 ```
 Returns JSON with folder name and array of documents with `id`, `title`, `created_at`.
 
 ### List Recent Documents
 ```bash
-python3 $GRANOLA recent [limit]
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" recent [limit]
 ```
 Lists the most recent documents (default 20).
 
 ### Get Full Transcript
 ```bash
-python3 $GRANOLA transcript <document_id>
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" transcript <document_id>
 ```
 Returns the full meeting transcript with speaker names and timestamps in markdown format.
 
 ### Chat with a Single Document
 ```bash
-python3 $GRANOLA chat "your question here" --doc <document_id>
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" chat "your question here" --doc <document_id>
 ```
 Asks Granola's AI a question about a specific meeting. Returns the AI-generated response with transcript quotes.
 
 ### Chat with an Entire Folder
 ```bash
-python3 $GRANOLA chat "your question here" --folder <folder_id>
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/granola.py" chat "your question here" --folder <folder_id>
 ```
 Asks Granola's AI a question across all documents in a folder.
 
